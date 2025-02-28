@@ -16,10 +16,13 @@ var calculator : Calculator = Calculator.init()
 /// - May be more than 2 numbers + 1 operator
 /// - Print integer
 
+// -----------------------------------
 // clear testParseInteger() - passed
 if args.count == 1 {
     print(Int(args[0])!)
+    exit(EXIT_SUCCESS)
 }
+// -----------------------------------
 
 // clear testInvalidInput() - passed
 // if not odd args.count: 3 + 2 + 2...
@@ -38,6 +41,7 @@ for index in args {
         }
     }
 }
+// -----------------------------------
 
 // clear testAdd()
 // sort, could be combined
@@ -56,11 +60,19 @@ func SimpleCalculator() {
         print(calculator.Addition(Int(args[0])!, Int(args[2])!))
     case "-":
         print(calculator.Subtraction(Int(args[0])!, Int(args[2])!))
+    case "*":
+        print(calculator.Multiplication(Int(args[0])!, Int(args[2])!))
+    case "/":
+        print(calculator.Division(Int(args[0])!, Int(args[2])!))
+    case "%":
+        print(calculator.Modulus(Int(args[0])!, Int(args[2])!))
     default:
         print(0)
     }
 }
 
 func ComplexCalculator() {
-    ExpressionTreeNode(dataType: DataType.IS_NUMBER, number: 1, operand: "", left: 3, right: 4)
+    for element in args {
+        print(0)
+    }
 }
